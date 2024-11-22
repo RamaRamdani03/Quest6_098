@@ -28,4 +28,12 @@ fun DynamicSelectTextField(
     var expanded by remember {
         mutableStateOf(false)
     }
+
+    ExposedDropdownMenuBox(
+        expanded = expanded,
+        onExpandedChange = { expanded = !expanded},
+        modifier = modifier
+    ){
+
+    }
 }

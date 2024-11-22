@@ -15,14 +15,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.navigationmultipledata.R
 
-@Preview(showBackground = true)
+
 @Composable
-fun SplashView(){
-    Column(modifier = Modifier
+fun SplashView(onMulaiButton: () -> Unit){
+    Column(
+        modifier = Modifier
         .fillMaxSize()
         .background(
             color = colorResource(R.color.primary)
@@ -30,16 +30,5 @@ fun SplashView(){
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-       Image(
-           painter = painterResource(id = R.drawable.umyeah),
-           contentDescription = null,
-           modifier = Modifier.size(150.dp)
-       )
-        Spacer(modifier = Modifier.padding(16.dp))
-        Button(
-            onClick = {}
-        ) {
-           Text("Mulai")
-        }
     }
 }

@@ -25,4 +25,7 @@ fun DynamicSelectTextField(
     onValueChangedEvent: (String) -> Unit,
     modifier: Modifier = Modifier
 ){
+    var expanded by remember {
+        mutableStateOf(false)
+    }
 }

@@ -114,21 +114,29 @@ fun RencanaStudyView(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(16.dp)
-                ) {
-                    Text(text = "Pilih Mata Kuliah Peminatan", fontWeight = FontWeight.Bold)
-                    Text(
-                        text = "Silahkan pilih mata kuliah yang anda inginkan",
-                        fontSize = 12.sp,
-                        fontWeight = FontWeight.Light
-                    )
-                    Spacer(modifier = Modifier.padding(8.dp))
-                    DynamicSelectTextField(
-                        selectedValue = chosenDropdown,
-                        options = MataKuliah.options,
-                        label = "Mata Kuliah",
-                        onValueChangedEvent = { chosenDropdown = it }
-                    )
-                }
+            ){
+                Text(text = "Pilih Mata Kuliah Peminatan", fontWeight = FontWeight.Bold)
+                Text(
+                    text = "Silahkan pilih mata kuliah yang anda inginkan",
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Light
+                )
+                Spacer(modifier = Modifier.padding(8.dp))
+                DynamicSelectTextField(
+                    selectedValue = chosenDropdown,
+                    options = MataKuliah.options,
+                    label = "Mata Kuliah",
+                    onValueChangedEvent = {chosenDropdown = it}
+                )
+                Spacer(modifier = Modifier.padding(8.dp))
+                Spacer(modifier = Modifier.padding(8.dp))
+                Text(text = "Pilih Kelas Belajar", fontWeight = FontWeight.Bold)
+                Text(
+                    text = "Silahkan pilih kelas dari mata kuliah yang anda inginkan",
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Light
+                )
+            }
         }
     }
 }

@@ -67,7 +67,7 @@ fun RencanaStudyView(
                 .fillMaxWidth()
                 .padding(10.dp),
             verticalAlignment = Alignment.CenterVertically
-        ) {
+        ){
             Image(
                 painter = painterResource(id = R.drawable.saya),
                 contentDescription = "",
@@ -76,7 +76,7 @@ fun RencanaStudyView(
                     .size(80.dp)
             )
             Spacer(modifier = Modifier.padding(start = 16.dp))
-            Column(modifier = Modifier.weight(1f)) {
+            Column (modifier = Modifier.weight(1f)){
                 Text(
                     text = mahasiswa.nama,
                     fontWeight = FontWeight.Bold,
@@ -88,6 +88,13 @@ fun RencanaStudyView(
                     fontWeight = FontWeight.Bold,
                     fontSize = 15.sp,
                     color = Color.White
+                )
+            }
+            Box{
+                Icon(
+                    imageVector = Icons.Filled.Notifications,
+                    contentDescription = "",
+                    tint = Color.White
                 )
             }
         }

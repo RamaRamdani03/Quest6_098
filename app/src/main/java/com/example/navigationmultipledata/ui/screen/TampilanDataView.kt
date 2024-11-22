@@ -36,5 +36,10 @@ fun TampilView(
     onBackButtonClicked: () -> Unit,
     onResetButtonClicked: () -> Unit,
 ) {
-
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(colorResource(id = R.color.primary)),
+    ) {
+    }
 }

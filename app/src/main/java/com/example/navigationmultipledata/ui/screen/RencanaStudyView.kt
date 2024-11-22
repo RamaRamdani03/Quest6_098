@@ -114,7 +114,7 @@ fun RencanaStudyView(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(16.dp)
-            ){
+            ) {
                 Text(text = "Pilih Mata Kuliah Peminatan", fontWeight = FontWeight.Bold)
                 Text(
                     text = "Silahkan pilih mata kuliah yang anda inginkan",
@@ -126,7 +126,7 @@ fun RencanaStudyView(
                     selectedValue = chosenDropdown,
                     options = MataKuliah.options,
                     label = "Mata Kuliah",
-                    onValueChangedEvent = {chosenDropdown = it}
+                    onValueChangedEvent = { chosenDropdown = it }
                 )
                 Spacer(modifier = Modifier.padding(8.dp))
                 Spacer(modifier = Modifier.padding(8.dp))
@@ -136,6 +136,41 @@ fun RencanaStudyView(
                     fontSize = 12.sp,
                     fontWeight = FontWeight.Light
                 )
+                Spacer(modifier = Modifier.padding(8.dp))
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    RuangKelas.listKelas.forEach { listData ->
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            RadioButton(
+                                selected = pilihanKelas == listData,
+                                onClick = { pilihanKelas = listData }
+                            )
+                            Text(listData)
+                        }
+                    }
+
+                }
+                Spacer(modifier = Modifier.padding(8.dp))
+                Spacer(modifier = Modifier.padding(8.dp))
+                Text(text = "Klausul Persetujuan Mahasiswa", fontWeight = FontWeight.Bold)
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(8.dp)
+                ) {
+                    Checkbox(
+                        checked = checked,
+                        onCheckedChange = { checked = it },
+                        enabled = chosenDropdown.isNotBlank() && pilihanKelas.isNotBlank()
+                    )
+                    Text(
+                        text = "Saya menyetujui setiap pernyataan yang ada tanpa paksaan dari pihak manapun",
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Light,
+                        modifier = Modifier.padding(start = 8.dp)
+                    )
+                }
             }
         }
     }

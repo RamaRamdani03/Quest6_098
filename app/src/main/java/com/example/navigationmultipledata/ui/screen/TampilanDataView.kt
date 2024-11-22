@@ -41,5 +41,32 @@ fun TampilView(
             .fillMaxSize()
             .background(colorResource(id = R.color.primary)),
     ) {
+        Spacer(modifier = Modifier.padding(top = 40.dp))
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(10.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.saya),
+                contentDescription = "",
+                modifier = Modifier
+                    .clip(shape = CircleShape)
+                    .size(80.dp)
+            )
+            Spacer(modifier = Modifier.padding(start = 16.dp))
+            Column {
+                Text(text = "Data KRS Mahasiswa",
+                    color = Color.White,
+                    fontSize = 15.sp,
+                    fontWeight = FontWeight.Bold
+                )
+                Text(text = "Universitas Muhammadiyah Yogyakarta",
+                    color = Color.White,
+                    fontWeight = FontWeight.Light
+                )
+            }
+        }
     }
 }
